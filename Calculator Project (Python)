@@ -1,0 +1,66 @@
+# create my own function that generates the user inputs for the first and second number and the operation
+
+def userInput():
+    value1 = input("Please give me a number: ")
+    value2 = input("Please give me another number: ")
+    operation = input("Please give me an operation: ")
+    return value1, value2, operation
+    
+# create my own function that takes the user inputs and performs calculations
+
+def userResult(value1,value2,operation):  
+    try:  
+        value1 = float(value1)  
+        value2 = float(value2)  
+
+# ‘if’ statement used for the four operations  
+# another ‘if’ statement embedded for division operation; not possible to divide a number by zero  
+# ‘try’ function is used to handle scenarios where user inputs other values except from numbers  
+
+        if operation == "+":  
+            values = value1 + value2   
+            return values   
+        elif operation == "-":   
+            values = value1 - value2   
+            return values   
+        elif operation == "*":   
+            values = value1 * value2   
+            return values 
+            
+# if user attempts to divide the first number by zero, error message displays
+
+        elif operation == "/":  
+            if value2 == 0:  
+                print("Error: cannot divide by zero")  
+                return None  
+            values = value1 / value2  
+            return values  
+        elif operation == "**": 
+            values = value1 ** value2 
+            return values 
+            
+# if user inputs an invalid value for the operation, error message displays
+
+        else:   
+            print("Please enter a valid operation. ")  
+            return None  
+            
+# if user inputs invalid values for first and second number, error message displays
+
+    except ValueError:  
+        print("Error: Please enter numbers for your calculation")  
+        return None  
+
+# using a while loop, program asks user if they want to start another calculation and if not, it closes 
+
+while True:  
+    value1, value2, operation = userInput()
+    result = userResult(value1, value2, operation)
+    
+    if result is not None:  
+        print(f"The answer is:", result)  
+    print("Would you like to start an other calculation? ")  
+    newCalculation = input().lower()  
+    if newCalculation != "yes":  
+        print("Exiting the program...")
+        break

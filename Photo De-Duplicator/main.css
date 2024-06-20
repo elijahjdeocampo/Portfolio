@@ -1,0 +1,39 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1E1E1E;
+    position: relative;
+}
+.content {
+    background-color: white;
+    padding: 20px;
+    max-width: 1200px;
+    width: calc(100% - 20px); /
+    box-sizing: border-box;
+    border: 10px solid black;
+    position: relative;
+    margin-top: 80px; 
+}
+.logo-container {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    padding: 5px;
+    z-index: 1; 
+}
+.logo-container img {
+    max-height: 40vh; 
+    max-width: 70vw;}
+
+.w3-quarter img {
+    width: 100%;
+}
+
